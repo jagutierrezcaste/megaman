@@ -1,0 +1,35 @@
+<div>
+  <form>
+    <div class="input-group mb-3">
+     <input class="input-group-prepend" type="text" #nuevaLista >
+     <button class="btn btn-outline-secondary" (click)="addnewTodo(nuevaLista.value); nuevaLista.value">
+        Nuevo
+      </button>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let lista of listar">
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <input type="checkbox" value="{{lista.id}}" (change)="newFuncion(lista.id)">
+                <input class="input-group-text" value="{{lista.id}}">
+                <input class="input-group-text" value="{{lista.texto}}">
+                <button class="btn btn-danger" (click)="deleteTodo(lista)">Borrar</button>
+                <button class="btn btn-warning" (click)="editTask(lista.id)">edit</button>
+              </div>
+          </div>
+      </li> 
+    
+    </ul>
+  </form>
+</div> 
+
+
+
+
+<!-- <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul> -->
